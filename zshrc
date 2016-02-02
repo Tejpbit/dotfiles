@@ -1,12 +1,14 @@
 export ZSH="$HOME/dotfiles/oh-my-zsh/"
 
+zstyle ':completion:*' special-dirs true
+
 # Set name of the theme to load.
 # Look in ~/.oh-my-zsh/themes/
 # Optionally, if you set this to "random", it'll load a random theme each
 # time that oh-my-zsh is loaded.
 if [[ -z "$ZSH_THEME" ]]
 then
-	ZSH_THEME="tejp"
+	ZSH_THEME="eda"
 fi
 
 # Would you like to use another custom folder than $ZSH/custom?
@@ -19,12 +21,35 @@ export LANG=en_GB.UTF-8
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git archlinux zsh-syntax-highlighting)
+# plugins=(git archlinux zsh-syntax-highlighting)
 
+# ------------------------------------------------------------------------------
+# -- OS specific setup
+# OS X setup
+if [[ `uname` = "Darwin" ]]; then
+	echo tjenna
+	plugins=(git osx zsh-syntax-highlighting)
+fi
+# Arch setup
+if [[ `uname` = "Linux" ]]; then
+	plugins=(git archlinux zsh-syntax-highlighting)
+        alias reboot="~/dotfiles/bin/reboot.sh"
+fi
 source $ZSH/oh-my-zsh.sh
 
 # Add cabal bin path
-export PATH="$HOME/Library/Haskell/bin:$PATH"
+export PATH="$PATH:$HOME/.cabal/bin"
+# Gradle bin path
+export PATH="$PATH:/Volumes/home/tejp/gradle-2.9/bin"
+# Ruby gems path
+export PATH="$PATH:/home/tejp/.gem/ruby/2.3.0/bin"
 
+eval $(thefuck --alias)
 alias irkk="ssh cantina -t irkk"
-function gi() { curl -L -s https://www.gitignore.io/api/\$@ ;}
+
+
+# Cli gitignore generation
+alias gi="git ignore"
+alias path="echo $PATH | tr ':' '\n'"
+
+
