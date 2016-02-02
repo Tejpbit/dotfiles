@@ -1,0 +1,30 @@
+Xft*dpi:		168
+
+URxvt*depth:		32
+URxvt*scrollstyle:	plain
+URxvt*scrollBar:	false
+*background:		#333333
+URxvt*background:	#333333
+!URxvt*fadeColor:	[80]#333333
+*foreground:		#ffffff
+URxvt*foreground:	#ffffff
+URxvt*font:		xft:Terminus:regular:pixelsize=32
+URxvt*boldFont:		xft:Terminus:bold:pixelsize=32
+
+Rxvt.perl-ext-common: default,matcher,resize-font,url-select
+! Clickable urls
+URxvt.url-launcher: /usr/bin/chromium
+URxvt.matcher.button: 1
+
+! Url-select
+URxvt.url-select.launcher: chromium
+URxvt.url-select.underline: true
+URxvt.url-select.button: 1
+URxvt.keysym.M-u:   perl:url-select:select_next
+
+! resize-font why no work?
+! URxvt.resize-font.smaller: C-Down
+! URxvt.resize-font.bigger: C-Up
+
+! URxvt.iso14755: false
+! URxvt.iso14755_52: false
