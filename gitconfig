@@ -1,0 +1,41 @@
+[user]
+	email = andresamuelsson94@gmail.com
+	name = André Samuelsson
+[push]
+	default = simple
+[alias]
+	ignore = "!gi() { curl -L -s https://www.gitignore.io/api/$@ ;}; gi"
+[filter "lfs"]
+	clean = git-lfs clean %f
+	smudge = git-lfs smudge %f
+	required = true
+[color]
+    # Use colors in Git commands that are capable of colored output when outputting to the terminal
+    ui = auto
+[color "branch"]
+    current = green bold
+    local = yellow
+    remote = yellow
+[color "diff"]
+    meta = yellow bold
+    frag = magenta bold
+    old = red reverse
+    new = green reverse
+    whitespace = white reverse
+[color "status"]
+    added = yellow
+    changed = red
+    untracked = cyan
+    branch = green
+[merge]
+    # Include summaries of merged commits in newly created merge commit messages
+    log = true
+
+# Use `origin` as the default remote on the `master` branch in all cases
+[branch "master"]
+    remote = origin
+    merge = refs/heads/master
+
+[format]
+    pretty = %C(cyan)%h%C(green) %an\t%Creset%s
+
