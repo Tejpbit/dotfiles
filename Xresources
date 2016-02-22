@@ -28,3 +28,5 @@ URxvt.keysym.M-u:   perl:url-select:select_next
 
 ! URxvt.iso14755: false
 ! URxvt.iso14755_52: false
+URxvt*color12: rgb:00/99/ff
+URxvt*color4: rgb:33/66/ff
