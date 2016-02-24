@@ -1,4 +1,4 @@
-export ZSH="$HOME/dotfiles/oh-my-zsh/"
+export ZSH="$HOME/dotfiles/oh-my-zsh"
 
 zstyle ':completion:*' special-dirs true
 
@@ -44,10 +44,11 @@ export PATH="$PATH:/Volumes/home/tejp/gradle-2.9/bin"
 # Ruby gems path
 export PATH="$PATH:/home/tejp/.gem/ruby/2.3.0/bin"
 
-eval $(thefuck --alias)
 alias irkk="ssh cantina -t irkk"
+alias weather="curl http://wttr.in/gothenburg"
 
 
+export EDITOR=vim
 # Cli gitignore generation
 alias gi="git ignore"
 alias path="echo $PATH | tr ':' '\n'"
