@@ -46,11 +46,9 @@ export PATH="$PATH:/home/tejp/.gem/ruby/2.3.0/bin"
 
 alias irkk="ssh cantina -t irkk"
 alias weather="curl http://wttr.in/gothenburg"
-
-
-export EDITOR=vim
-# Cli gitignore generation
+alias vim="nvim"
 alias gi="git ignore"
 alias path="echo $PATH | tr ':' '\n'"
 
+export EDITOR=nvim
 
