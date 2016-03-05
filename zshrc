@@ -27,7 +27,6 @@ export LANG=en_GB.UTF-8
 # -- OS specific setup
 # OS X setup
 if [[ `uname` = "Darwin" ]]; then
-	echo tjenna
 	plugins=(git osx zsh-syntax-highlighting)
 fi
 # Arch setup
