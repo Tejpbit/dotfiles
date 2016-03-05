@@ -8,7 +8,7 @@ zstyle ':completion:*' special-dirs true
 # time that oh-my-zsh is loaded.
 if [[ -z "$ZSH_THEME" ]]
 then
-	ZSH_THEME="eda"
+	ZSH_THEME="gallifrey"
 fi
 
 # Would you like to use another custom folder than $ZSH/custom?
