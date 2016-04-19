@@ -44,10 +44,16 @@ export PATH="$PATH:/Volumes/home/tejp/gradle-2.9/bin"
 export PATH="$PATH:/home/tejp/.gem/ruby/2.3.0/bin"
 
 alias irkk="ssh cantina -t irkk"
+alias i="ssh cantina -t irkk"
 alias weather="curl http://wttr.in/gothenburg"
 alias vim="nvim"
 alias gi="git ignore"
 alias path="echo $PATH | tr ':' '\n'"
+alias netswitch="sudo netctl-auto switch-to"
+alias lock="~/dotfiles/mylock.sh"
 
 export EDITOR=nvim
 
+
+# added by travis gem
+[ -f /home/tejp/.travis/travis.sh ] && source /home/tejp/.travis/travis.sh
