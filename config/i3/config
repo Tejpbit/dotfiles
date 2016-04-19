@@ -193,3 +193,7 @@ bindsym $mod+o scratchpad show
 # Lock 
 bindsym $mod+BackSpace exec ~/dotfiles/mylock.sh
 
+# Print screen to keybase
+set $keybase_user tejp
+bindsym XF86LaunchA exec scrot -e 'echo "https://keybase.pub/$keybase_user/photos/$f" | xclip -sel clip && mv $f /keybase/public/$keybase_user/photos/'
+bindsym --release XF86LaunchB exec scrot -e 'echo "https://keybase.pub/$keybase_user/photos/$f" | xclip -sel clip && mv $f /keybase/public/$keybase_user/photos/' -s
