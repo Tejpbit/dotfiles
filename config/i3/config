@@ -190,9 +190,6 @@ bindsym $mod+o scratchpad show
 # Show a specific scratchpad window (based on title of window?)
 # bindsym mod4+s [title="^Sup ::"] scratchpad show
 
-# Lock 
-bindsym $mod+BackSpace exec ~/dotfiles/mylock.sh
-
 # Print screen to keybase
 set $keybase_user tejp
 bindsym XF86LaunchA exec scrot -e 'echo "https://keybase.pub/$keybase_user/photos/$f" | xclip -sel clip && mv $f /keybase/public/$keybase_user/photos/'
