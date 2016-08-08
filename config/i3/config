@@ -10,6 +10,7 @@
 # Please see http://i3wm.org/docs/userguide.html for a complete reference!
 
 set $mod Mod4
+set $alt Mod1
 
 # Font for window titles. Will also be used by the bar unless a different font
 # is used in the bar {} block below.
@@ -34,6 +35,16 @@ bindsym $mod+Return exec i3-sensible-terminal
 
 # kill focused window
 bindsym $mod+Shift+q kill
+new_window 1pixel
+
+# class                 border  backgr. text    indicator child_border
+client.focused          #ffffff #285577 #ffffff #2e9ef4   #BCCF68
+client.focused_inactive #333333 #5f676a #ffffff #484e50   #5f676a
+client.unfocused        #333333 #222222 #888888 #292d2e   #2E294E
+client.urgent           #2f343a #900000 #ffffff #900000   #900000
+client.placeholder      #000000 #0c0c0c #ffffff #000000   #0c0c0c
+
+client.background       #ffffff
 
 # start dmenu (a program launcher)
 bindsym $mod+d exec dmenu_run -fn "-xos4-terminus-medium-r-*-*-32-*"
@@ -46,7 +57,7 @@ bindsym $mod+d exec dmenu_run -fn "-xos4-terminus-medium-r-*-*-32-*"
 bindsym $mod+j focus left
 bindsym $mod+k focus down
 bindsym $mod+l focus up
-bindsym $mod+semicolon focus right
+bindsym $mod+odiaeresis focus right
 
 # alternatively, you can use the cursor keys:
 bindsym $mod+Left focus left
@@ -58,13 +69,19 @@ bindsym $mod+Right focus right
 bindsym $mod+Shift+j move left
 bindsym $mod+Shift+k move down
 bindsym $mod+Shift+l move up
-bindsym $mod+Shift+semicolon move right
+bindsym $mod+Shift+odiaeresis move right
 
 # alternatively, you can use the cursor keys:
 bindsym $mod+Shift+Left move left
 bindsym $mod+Shift+Down move down
 bindsym $mod+Shift+Up move up
 bindsym $mod+Shift+Right move right
+
+#move workspace between monitors
+bindsym $mod+$alt+Left move workspace to output left
+bindsym $mod+$alt+Right move workspace to output right
+bindsym $mod+$alt+Up move workspace to output up
+bindsym $mod+$alt+Down move workspace to output down
 
 # split in horizontal orientation
 bindsym $mod+h split h
@@ -141,7 +158,7 @@ mode "resize" {
         bindsym j resize shrink width 10 px or 10 ppt
         bindsym k resize grow height 10 px or 10 ppt
         bindsym l resize shrink height 10 px or 10 ppt
-        bindsym semicolon resize grow width 10 px or 10 ppt
+        bindsym odiaeresis resize grow width 10 px or 10 ppt
 
         # same bindings, but for the arrow keys
         bindsym Left resize shrink width 10 px or 10 ppt
@@ -194,3 +211,5 @@ bindsym $mod+o scratchpad show
 set $keybase_user tejp
 bindsym XF86LaunchA exec scrot -e 'echo "https://keybase.pub/$keybase_user/photos/$f" | xclip -sel clip && mv $f /keybase/public/$keybase_user/photos/'
 bindsym --release XF86LaunchB exec scrot -e 'echo "https://keybase.pub/$keybase_user/photos/$f" | xclip -sel clip && mv $f /keybase/public/$keybase_user/photos/' -s
+
+mouse_warping none
