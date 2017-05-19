@@ -31,17 +31,13 @@ if [[ `uname` = "Darwin" ]]; then
 fi
 # Arch setup
 if [[ `uname` = "Linux" ]]; then
-	plugins=(git archlinux zsh-syntax-highlighting)
+	plugins=(git archlinux zsh-syntax-highlighting z)
         alias reboot="~/dotfiles/bin/reboot.sh"
 fi
 source $ZSH/oh-my-zsh.sh
 
-# Add cabal bin path
-export PATH="$PATH:$HOME/.cabal/bin"
-# Gradle bin path
-export PATH="$PATH:/Volumes/home/tejp/gradle-2.9/bin"
-# Ruby gems path
-export PATH="$PATH:/home/tejp/.gem/ruby/2.3.0/bin"
+export GOPATH=$HOME/go
+export PATH="$PATH:$GOPATH/bin"
 
 alias irkk="ssh cantina -t irkk"
 alias i="ssh cantina -t irkk"
