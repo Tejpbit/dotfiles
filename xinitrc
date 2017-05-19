@@ -46,6 +46,6 @@ xcompmgr -c -r 0 &
 
 nm-applet &
 
-feh --bg-scale Pictures/Seljalandsfoss_Waterfall_img.jpg
+feh --bg-scale Pictures/sicao_green_tunnel-wallpaper-2560x1600.jpg
 
 exec i3
