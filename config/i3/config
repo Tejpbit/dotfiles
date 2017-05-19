@@ -207,6 +207,9 @@ bindsym $mod+o scratchpad show
 # Show a specific scratchpad window (based on title of window?)
 # bindsym mod4+s [title="^Sup ::"] scratchpad show
 
+# Lock screen
+bindsym $alt+l exec ~/dotfiles/bin/mylock.sh
+
 # Polybar start
 exec_always --no-startup-id $HOME/.config/polybar/launch.sh
 
