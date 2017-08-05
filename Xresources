@@ -11,20 +11,30 @@ URxvt*scrollBar:	false
 URxvt*font:		xft:FiraMono:regular:pixelsize=26, xft:Unifont:size=14
 URxvt*boldFont:		xft:FiraMono:bold:pixelsize=26
 
-Rxvt.perl-ext-common: default,matcher,resize-font,url-select
+URxvt.perl-lib:	~/.urxvt/
+Rxvt.perl-ext-common: default,matcher,resize-font,url-select,tabbedex
 ! Clickable urls
-URxvt.url-launcher: /usr/bin/chromium
+URxvt.url-launcher: /usr/bin/google-chrome-stable
 URxvt.matcher.button: 1
 
 ! Url-select
-URxvt.url-select.launcher: chromium
+URxvt.url-select.launcher: google-chrome-stable
 URxvt.url-select.underline: true
 URxvt.url-select.button: 1
 URxvt.keysym.M-u:   perl:url-select:select_next
 
 ! resize-font why no work?
-! URxvt.resize-font.smaller: C-Down
-! URxvt.resize-font.bigger: C-Up
+URxvt.resize-font.smaller: C-Down
+URxvt.resize-font.bigger: C-Up
+URxvt.iso14755: false
+URxvt.iso14755_52: false
+
+URxvt*fading:		30
+URxvt*mapAlert:		true
+URxvt.tabbed.tabbar-fg: 3
+URxvt.tabbed.tabbar-bg: 0
+URxvt.tabbed.tab-fg: 4
+URxvt.tabbed.tab-bg: 0
 
 ! special
 *.foreground:   #c5c8c6

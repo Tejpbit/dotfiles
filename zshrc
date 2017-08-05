@@ -38,6 +38,7 @@ source $ZSH/oh-my-zsh.sh
 
 export GOPATH=$HOME/go
 export PATH="$PATH:$GOPATH/bin"
+export PATH="$PATH:$HOME/dotfiles/bin"
 
 alias irkk="ssh cantina -t irkk"
 alias i="ssh cantina -t irkk"

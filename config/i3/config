@@ -47,7 +47,8 @@ client.placeholder      #000000 #0c0c0c #ffffff #000000   #0c0c0c
 client.background       #ffffff
 
 # start dmenu (a program launcher)
-bindsym $mod+d exec dmenu_run -fn "-xos4-terminus-medium-r-*-*-32-*"
+#bindsym $mod+d exec dmenu_run -fn "-xos4-terminus-medium-r-*-*-32-*"
+bindsym $mod+d exec rofi -show run
 # There also is the (new) i3-dmenu-desktop which only displays applications
 # shipping a .desktop file. It is a wrapper around dmenu, so you need that
 # installed.
