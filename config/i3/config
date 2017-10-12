@@ -202,6 +202,10 @@ bindsym XF86AudioPrev exec playerctl previous
 bindsym XF86KbdBrightnessUp   exec kbdlight up 5
 bindsym XF86KbdBrightnessDown exec kbdlight down 5
 
+# Screen brightness control -- xorg-xbacklight from pacman
+bindsym XF86MonBrightnessDown exec xbacklight -dec 10
+bindsym XF86MonBrightnessUp   exec xbacklight -inc 10
+
 # Scratchpad
 bindsym $mod+shift+m move scratchpad
 bindsym $mod+o scratchpad show
