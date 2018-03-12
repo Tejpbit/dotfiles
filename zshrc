@@ -39,17 +39,20 @@ source $ZSH/oh-my-zsh.sh
 export GOPATH=$HOME/go
 export PATH="$PATH:$GOPATH/bin"
 export PATH="$PATH:$HOME/dotfiles/bin"
+export PATH="$PATH:$HOME/.gem/ruby/2.4.0/bin"
+export PATH="$PATH:$HOME/.yarn/bin"
 
 alias irkk="ssh cantina -t irkk"
 alias i="ssh cantina -t irkk"
 alias weather="curl http://wttr.in/gothenburg"
-alias vim="nvim"
 alias gi="git ignore"
 alias path="echo $PATH | tr ':' '\n'"
 alias netswitch="sudo netctl-auto switch-to"
 alias lock="~/dotfiles/mylock.sh"
+alias ls="exa --git"
 
-export EDITOR=nvim
+export EDITOR=vim
+export DOTFILES=$HOME/dotfiles
 
 
 # added by travis gem
