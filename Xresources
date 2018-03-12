@@ -32,12 +32,17 @@ URxvt.resize-font.bigger: C-Up
 URxvt.iso14755: false
 URxvt.iso14755_52: false
 
-URxvt*fading:		30
+! Scrolling
+URxvt*scrollTtyOutput:      false
+URxvt*scrollWithBuffer:     true
+URxvt*scrollTtyKeypress:    true
+
+!URxvt*fading:		30
 URxvt*mapAlert:		true
-URxvt.tabbed.tabbar-fg: 3
-URxvt.tabbed.tabbar-bg: 0
-URxvt.tabbed.tab-fg: 4
-URxvt.tabbed.tab-bg: 0
+!URxvt.tabbed.tabbar-fg: 3
+!URxvt.tabbed.tabbar-bg: 0
+!URxvt.tabbed.tab-fg: 4
+!URxvt.tabbed.tab-bg: 0
 
 ! special
 *.foreground:   #c5c8c6
