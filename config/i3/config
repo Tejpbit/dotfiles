@@ -206,6 +206,9 @@ bindsym XF86KbdBrightnessDown exec kbdlight down 5
 bindsym XF86MonBrightnessDown exec xbacklight -dec 10
 bindsym XF86MonBrightnessUp   exec xbacklight -inc 10
 
+#Screenshot key
+bindsym XF86LaunchA exec sh $HOME/dotfiles/bin/copytoclipboard.sh
+
 # Scratchpad
 bindsym $mod+shift+m move scratchpad
 bindsym $mod+o scratchpad show
