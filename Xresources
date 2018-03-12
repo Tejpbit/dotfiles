@@ -1,5 +1,7 @@
 Xft*dpi:		168
 
+URxvt.visualBell:	false
+
 URxvt*depth:		32
 URxvt*scrollstyle:	plain
 URxvt*scrollBar:	false
