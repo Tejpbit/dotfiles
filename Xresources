@@ -10,14 +10,15 @@ URxvt*scrollBar:	false
 !URxvt*fadeColor:	[80]#333333
 !*foreground:		#ffffff
 !URxvt*foreground:	#ffffff
-URxvt*font:		xft:FiraMono:regular:pixelsize=26, xft:Unifont:size=14
-URxvt*boldFont:		xft:FiraMono:bold:pixelsize=26
+URxvt*font:		xft:FiraMono:regular:pixelsize=22, xft:Unifont:size=14
+URxvt*boldFont:		xft:FiraMono:bold:pixelsize=22
 
 URxvt.perl-lib:	~/.urxvt/
-Rxvt.perl-ext-common: default,matcher,resize-font,url-select,tabbedex
+Rxvt.perl-ext-common: default,matcher,url-select,resize-font
 ! Clickable urls
 URxvt.url-launcher: /usr/bin/google-chrome-stable
 URxvt.matcher.button: 1
+
 
 ! Url-select
 URxvt.url-select.launcher: google-chrome-stable
