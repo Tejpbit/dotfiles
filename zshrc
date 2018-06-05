@@ -27,7 +27,7 @@ export LANG=en_GB.UTF-8
 # -- OS specific setup
 # OS X setup
 if [[ `uname` = "Darwin" ]]; then
-	plugins=(git osx zsh-syntax-highlighting)
+	plugins=(git osx zsh-syntax-highlighting z)
 fi
 # Arch setup
 if [[ `uname` = "Linux" ]]; then
