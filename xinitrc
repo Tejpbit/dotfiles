@@ -46,9 +46,10 @@ xcompmgr -c -r 0 &
 
 nm-applet &
 
-#compton -bCz -r 0 -D 3
-compton --config $HOME/dotfiles/config/compton/compton.conf -b
-feh --bg-scale Pictures/dark_triangles.jpg
+#compton -bCz -o 0 -r 0 -D 3
+#compton --config $HOME/dotfiles/config/compton/compton.conf -b
+feh --bg-fill Pictures/hufkgs7vvk631.jpg
 srandrd myscreensetup
 
+setxkbmap -option caps:escape
 exec i3

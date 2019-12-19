@@ -55,10 +55,10 @@ bindsym $mod+d exec rofi -show run
 # bindsym $mod+d exec --no-startup-id i3-dmenu-desktop
 
 # change focus
-bindsym $mod+j focus left
-bindsym $mod+k focus down
-bindsym $mod+l focus up
-bindsym $mod+odiaeresis focus right
+bindsym $mod+h focus left
+bindsym $mod+j focus down
+bindsym $mod+k focus up
+bindsym $mod+l focus right
 
 # alternatively, you can use the cursor keys:
 bindsym $mod+Left focus left
@@ -67,10 +67,10 @@ bindsym $mod+Up focus up
 bindsym $mod+Right focus right
 
 # move focused window
-bindsym $mod+Shift+j move left
-bindsym $mod+Shift+k move down
-bindsym $mod+Shift+l move up
-bindsym $mod+Shift+odiaeresis move right
+bindsym $mod+Shift+h move left
+bindsym $mod+Shift+j move down
+bindsym $mod+Shift+k move up
+bindsym $mod+Shift+l move right
 
 # alternatively, you can use the cursor keys:
 bindsym $mod+Shift+Left move left
@@ -85,7 +85,7 @@ bindsym $mod+$alt+Up move workspace to output up
 bindsym $mod+$alt+Down move workspace to output down
 
 # split in horizontal orientation
-bindsym $mod+h split h
+bindsym $mod+g split h
 
 # split in vertical orientation
 bindsym $mod+v split v
@@ -110,30 +110,36 @@ bindsym $mod+a focus parent
 # focus the child container
 #bindsym $mod+d focus child
 
+set $WS_chat 1:
+set $WS_web 2:
+set $WS_music Music:
+
 # switch to workspace
 bindsym $mod+Tab workspace back_and_forth
-bindsym $mod+1 workspace 1:
-bindsym $mod+2 workspace 2:
+bindsym $mod+1 workspace $WS_chat
+bindsym $mod+2 workspace $WS_web
 bindsym $mod+3 workspace 3
 bindsym $mod+4 workspace 4
 bindsym $mod+5 workspace 5
 bindsym $mod+6 workspace 6
 bindsym $mod+7 workspace 7
 bindsym $mod+8 workspace 8
-bindsym $mod+9 workspace 9:
+bindsym $mod+9 workspace 9
 bindsym $mod+0 workspace 10
+bindsym $mod+$alt+s workspace $WS_music
 
 # move focused container to workspace
-bindsym $mod+Shift+1 move container to workspace 1:
-bindsym $mod+Shift+2 move container to workspace 2:
+bindsym $mod+Shift+1 move container to workspace $WS_chat
+bindsym $mod+Shift+2 move container to workspace $WS_web
 bindsym $mod+Shift+3 move container to workspace 3
 bindsym $mod+Shift+4 move container to workspace 4
 bindsym $mod+Shift+5 move container to workspace 5
 bindsym $mod+Shift+6 move container to workspace 6
 bindsym $mod+Shift+7 move container to workspace 7
 bindsym $mod+Shift+8 move container to workspace 8
-bindsym $mod+Shift+9 move container to workspace 9:
+bindsym $mod+Shift+9 move container to workspace 9
 bindsym $mod+Shift+0 move container to workspace 10
+bindsym $mod+Shift+$alt+s move container to workspace $WS_music
 
 # move active workspace to screen
 bindsym $mod+shift+a move workspace to output left
@@ -181,10 +187,10 @@ bindsym $mod+r mode "resize"
 #        status_command py3status -i ".config/i3status/modules"
 #}
 
-#gaps outer 0
-#gaps inner 15
-#smart_gaps on
-#smart_borders on
+gaps outer 0
+gaps inner 15
+smart_gaps on
+smart_borders on
 #for_window [class="^.*"] border pixel 6
 
 ### My keybindings
@@ -199,15 +205,21 @@ bindsym XF86AudioNext exec playerctl next
 bindsym XF86AudioPrev exec playerctl previous
 
 # Keyboard backlight control -- kbdlight package from AUR
-bindsym XF86KbdBrightnessUp   exec kbdlight up 5
-bindsym XF86KbdBrightnessDown exec kbdlight down 5
+#bindsym XF86KbdBrightnessUp   exec kbdlight up 5
+#bindsym XF86KbdBrightnessDown exec kbdlight down 5
+#bindsym XF86KbdBrightnessUp   exec xbacklight -ctrl dell::kbd_backlight -inc 5
+#bindsym XF86KbdBrightnessDown exec xbacklight -ctrl dell::kbd_backlight -dec 5
+bindsym XF86KbdBrightnessUp   exec xbacklight -inc 5
+bindsym XF86KbdBrightnessDown exec xbacklight -dec 5
 
 # Screen brightness control -- xorg-xbacklight from pacman
 bindsym XF86MonBrightnessDown exec xbacklight -dec 10
 bindsym XF86MonBrightnessUp   exec xbacklight -inc 10
 
 #Screenshot key
-bindsym XF86LaunchA exec sh $HOME/dotfiles/bin/copytoclipboard.sh
+#bindsym XF86LaunchA exec sh $HOME/dotfiles/bin/copytoclipboard.sh
+bindsym --release Print exec --no-startup-id sh $HOME/dotfiles/bin/print_screen_selection.sh
+bindsym --release $mod+Print exec --no-startup-id sh $HOME/dotfiles/bin/print_screen.sh
 
 # Scratchpad
 bindsym $mod+shift+m move scratchpad
@@ -221,9 +233,23 @@ bindsym $alt+l exec ~/dotfiles/bin/mylock.sh
 # Polybar start
 exec_always --no-startup-id $HOME/.config/polybar/launch.sh
 
-# Print screen to keybase
-set $keybase_user tejp
-bindsym XF86LaunchA exec scrot -e 'echo "https://keybase.pub/$keybase_user/photos/$f" | xclip -sel clip && mv $f /keybase/public/$keybase_user/photos/'
-bindsym --release XF86LaunchB exec scrot -e 'echo "https://keybase.pub/$keybase_user/photos/$f" | xclip -sel clip && mv $f /keybase/public/$keybase_user/photos/' -s
+# Search open windows
+bindsym $mod+apostrophe exec --no-startup-id ~/.config/i3/scripts/polybar_wrapper search
 
-mouse_warping none
+# Print screen to keybase
+#set $keybase_user tejp
+#bindsym XF86LaunchA exec scrot -e 'echo "https://keybase.pub/$keybase_user/photos/$f" | xclip -sel clip && mv $f /keybase/public/$keybase_user/photos/'
+#bindsym --release XF86LaunchB exec scrot -e 'echo "https://keybase.pub/$keybase_user/photos/$f" | xclip -sel clip && mv $f /keybase/public/$keybase_user/photos/' -s
+
+#mouse_warping none
+
+
+#-- Autostart --#
+exec slack
+assign [class="Slack"] $WS_chat
+exec telegram-desktop
+assign [class="TelegramDesktop"] $WS_chat
+exec google-chrome-stable
+assign [class="Google-chrome"] $WS_web
+exec spotify
+for_window [class="Spotify"] move to workspace $WS_music

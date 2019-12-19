@@ -41,6 +41,15 @@ export PATH="$PATH:$GOPATH/bin"
 export PATH="$PATH:$HOME/dotfiles/bin"
 export PATH="$PATH:$HOME/.gem/ruby/2.4.0/bin"
 export PATH="$PATH:$HOME/.yarn/bin"
+export PATH="$PATH:$HOME/.cargo/bin"
+export PATH="$PATH:$HOME/flutter/bin"
+
+# Android sdk paths
+export ANDROID_HOME=$HOME/Android/Sdk
+export PATH=$PATH:$ANDROID_HOME/emulator
+export PATH=$PATH:$ANDROID_HOME/tools
+export PATH=$PATH:$ANDROID_HOME/tools/bin
+export PATH=$PATH:$ANDROID_HOME/platform-tools
 
 alias irkk="ssh cantina -t irkk"
 alias i="ssh cantina -t irkk"
@@ -49,11 +58,15 @@ alias gi="git ignore"
 alias path="echo $PATH | tr ':' '\n'"
 alias netswitch="sudo netctl-auto switch-to"
 alias lock="~/dotfiles/mylock.sh"
-alias ls="exa --git"
+alias open="xdg-open"
 
 export EDITOR=vim
 export DOTFILES=$HOME/dotfiles
 
+#source /usr/share/nvm/init-nvm.sh
+export NVM_DIR="$HOME/.nvm"
+export NVM_SOURCE="/usr/share/nvm"
+[ -s "$NVM_SOURCE/nvm.sh" ] && . "$NVM_SOURCE/nvm.sh"
 
 # added by travis gem
 [ -f /home/tejp/.travis/travis.sh ] && source /home/tejp/.travis/travis.sh

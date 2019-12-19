@@ -1,5 +1,4 @@
-! located at ~/.local/rofi/config
-
+! located at ~/.local/rofi/config 
 ! "Enabled modi" Set from: Default
 ! rofi.modi:                           window,run,ssh
 ! "Window width" Set from: Default
@@ -15,10 +14,10 @@
 ! ROFI Color theme
 ! ------------------------------------------------------------------------------
 rofi.color-enabled: true
-rofi.color-window: #222222, argb:0fac863, #525252
-rofi.color-normal: argb:0000000, #d8dee9, argb:0000000, #82ae58, #1b2b34
-rofi.color-active: argb:0000000, #6699cc, argb:0000000, #6699cc, #1b2b34
-rofi.color-urgent: argb:0000000, #f99157, argb:0000000, #f99157, #1b2b34
+rofi.color-window: #222222, argb:0fac8630, #525252
+rofi.color-normal: argb:00000000, #d8dee9, argb:00000000, #82ae58, #1b2b34
+rofi.color-active: argb:00000000, #6699cc, argb:00000000, #6699cc, #1b2b34
+rofi.color-urgent: argb:00000000, #f99157, argb:00000000, #f99157, #1b2b34
 
 ! "Border width" Set from: Default
 ! rofi.bw:                             1

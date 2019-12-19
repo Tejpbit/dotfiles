@@ -1,4 +1,4 @@
-Xft*dpi:		168
+!Xft*dpi:		200
 
 URxvt.visualBell:	false
 
@@ -10,8 +10,15 @@ URxvt*scrollBar:	false
 !URxvt*fadeColor:	[80]#333333
 !*foreground:		#ffffff
 !URxvt*foreground:	#ffffff
-URxvt*font:		xft:FiraMono:regular:pixelsize=22, xft:Unifont:size=14
-URxvt*boldFont:		xft:FiraMono:bold:pixelsize=22
+URxvt*font:		xft:FiraMono:regular:pixelsize=18, \
+                        xft:Unifont:size=18, VL Gothic, \
+                        xft:Inconsolata:bold:size=16:antialias=true, \
+                        xft:DejaVu Sans:bold:size=16:antialias=true, \
+                        -*-unifont-*-*-*-*-*-*-*-*-*-*-*-*, \
+                        xft:Ubuntu Mono:pixelsize=18:antialias=true:hinting=true,\
+                        xft:Source Code Pro:pixelsize=18:style=medium:antialias=true,\
+URxvt*boldFont:		xft:FiraMono:bold:pixelsize=18
+
 
 URxvt.perl-lib:	~/.urxvt/
 Rxvt.perl-ext-common: default,matcher,url-select,resize-font
@@ -36,6 +43,12 @@ URxvt.iso14755_52: false
 URxvt*scrollTtyOutput:      false
 URxvt*scrollWithBuffer:     true
 URxvt*scrollTtyKeypress:    true
+
+! Searching
+URxvt.keysym.M-s: perl:keyboard-select:search
+
+!Scrollback
+URxvt.saveLines: 20000
 
 !URxvt*fading:		30
 URxvt*mapAlert:		true
