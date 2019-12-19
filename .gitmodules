@@ -6,4 +6,4 @@
 	url = https://github.com/zsh-users/zsh-syntax-highlighting
 [submodule "screenconfig"]
 	path = screenconfig
-	url = https://github.com/tejpbit/screenconfig
+	url = https://github.com/jceb/screenconfig
